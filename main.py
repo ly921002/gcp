@@ -14,7 +14,7 @@ env['REQUESTS_CA_BUNDLE'] = cert_path
 command = [
     "./komari-agent",  # 可执行文件路径（确保在相同目录或提供完整路径）
     "-e", "https://gcp.240713.xyz",
-    "-t", "alorV4SEQjwJyCKEEYPuUO"
+    "-t", "QlVjtgwxsl3ZwwX0CugyH4"
 ]
 
 try:
