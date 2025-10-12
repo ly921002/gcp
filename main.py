@@ -4,7 +4,7 @@ import os
 
 def main():
     # 从环境变量 SSL_CERT_FILE 读取证书路径
-    cert_path = os.getenv('SSL_CERT_FILE', '/gcp.240713.xyz.crt')
+    cert_path = os.getenv('SSL_CERT_FILE', 'gcp.240713.xyz.crt')
     
     # 设置环境变量
     env = os.environ.copy()
