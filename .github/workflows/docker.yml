@@ -1,4 +1,4 @@
-name: AGENT
+name: Docker Build & Push
 
 on:
   push:
@@ -29,5 +29,5 @@ jobs:
         context: .
         push: true
         tags: |
-          ${{ secrets.DOCKERHUB_USERNAME }}/your-image-name:latest
-          ${{ secrets.DOCKERHUB_USERNAME }}/your-image-name:${{ github.sha }}
+          ${{ secrets.DOCKERHUB_USERNAME }}/gcp-agent:latest
+          ${{ secrets.DOCKERHUB_USERNAME }}/gcp-agent:${{ github.sha }}
