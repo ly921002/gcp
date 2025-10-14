@@ -6,6 +6,7 @@ WORKDIR /app
 
 # 复制GitHub代码到容器（包括二进制文件）
 COPY . .
+RUN chmod +x /app/komari-agent
 
 # 安装依赖（可选：编译二进制依赖）
 RUN apt-get update && apt-get install -y build-essential \
