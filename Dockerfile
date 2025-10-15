@@ -6,7 +6,7 @@ WORKDIR /app
 
 # 复制应用程序文件
 COPY komari-agent .
-COPY gcp.240713.xyz.crt .  # 默认证书文件
+COPY gcp.240713.xyz.crt ./gcp.crt  # 默认证书文件
 COPY main.sh .
 
 # 创建日志目录
