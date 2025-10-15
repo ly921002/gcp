@@ -23,8 +23,7 @@ def main():
     command = [
         agent_path,
         "-e", os.getenv('KOMARI_ENDPOINT', 'https://gcp.240713.xyz'),
-        "-t", os.getenv('KOMARI_TOKEN', ''),
-        "--auto-discovery", os.getenv('KOMARI_AUTOTOKEN', '6tOSKaQEpU2zOFFHaKZbPn1s')
+        "-t", os.getenv('KOMARI_TOKEN', 'rP6F8lvOgWZXViUxnmDq1I')
     ]
     
     # 执行命令
