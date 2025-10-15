@@ -18,7 +18,7 @@ RUN chmod +x komari-agent main.sh
 # 设置默认环境变量（可在运行时覆盖）
 ENV ENDPOINT="https://gcp.240713.xyz" \
     TOKEN="rP6F8lvOgWZXViUxnmDq1I" \
-    SSL_CERT_FILE="gcp.240713.xyz.crt"
+    SSL_CERT_FILE=gcp.240713.xyz.crt
 
 # 指定容器启动命令
 CMD ["./main.sh"]
