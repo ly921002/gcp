@@ -33,15 +33,26 @@ def main():
             env=env,  # 传递自定义环境变量
             check=True,
             text=True,
-            stdout=sys.stdout,
-            stderr=sys.stderr
+            capture_output=True,  # 关键：捕获完整输出
+            encoding='utf-8'      # 明确指定编码
         )
     except subprocess.CalledProcessError as e:
-        print(f"命令执行失败，错误码: {e.returncode}")
+        # 增强错误诊断
+        print(f"\n❌ 命令执行失败 (错误码: {e.returncode})")
+        print(f"► 执行的命令: {' '.join(e.cmd)}")
+        
+        if e.stdout:
+            print("\n[标准输出]:")
+            print(e.stdout.strip())
+        
+        if e.stderr:
+            print("\n[错误输出]:")
+            print(e.stderr.strip())
+        
         sys.exit(e.returncode)
-    except FileNotFoundError:
-        print("错误：找不到 komari-agent 文件")
-        sys.exit(1)
+    else:
+        # 成功时处理输出
+        print(result.stdout)
 
 if __name__ == "__main__":
     main()
