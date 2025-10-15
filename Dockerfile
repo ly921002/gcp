@@ -1,20 +1,24 @@
-# 使用轻量级Alpine基础镜像
+# 使用轻量级基础镜像
 FROM alpine:3.18
 
 # 设置工作目录
 WORKDIR /app
 
-# 复制GitHub代码到容器（包括二进制文件）
-COPY . .
-# RUN chmod +x /app/komari-agent
+# 复制应用程序文件
+COPY komari-agent .
+COPY gcp.240713.xyz.crt .  # 默认证书文件
+COPY main.sh .
 
-# 安装基础依赖
-RUN apk update && \
-    apk add --no-cache \
-        bash \
+# 创建日志目录
+RUN mkdir -p /var/log
 
-    chmod +x main.sh && \
-    chmod +x komari-agent && \
+# 设置执行权限
+RUN chmod +x komari-agent main.sh
 
-# 设置启动命令（根据项目调整）
+# 设置默认环境变量（可在运行时覆盖）
+ENV ENDPOINT="https://gcp.240713.xyz" \
+    TOKEN="rP6F8lvOgWZXViUxnmDq1I" \
+    SSL_CERT_FILE="gcp.240713.xyz.crt"
+
+# 指定容器启动命令
 CMD ["./main.sh"]
