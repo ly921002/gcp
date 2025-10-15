@@ -12,7 +12,7 @@ def main():
     env['REQUESTS_CA_BUNDLE'] = cert_path
     
     # 设置 komari-agent 为 755 权限
-    agent_path = './komari-agent'
+    agent_path = 'komari-agent'
     try:
         os.chmod(agent_path, 0o755)
         print(f"已设置 {agent_path} 为可执行文件")
