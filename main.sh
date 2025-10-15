@@ -11,7 +11,7 @@ export ENDPOINT=${ENDPOINT:-"https://gcp.240713.xyz"}
 export TOKEN=${TOKEN:-"rP6F8lvOgWZXViUxnmDq1I"}
 
 # 默认证书文件（原命令中的 gcp.240713.xyz.crt）
-export SSL_CERT_FILE=${SSL_CERT_FILE:-"gcp.240713.xyz.crt"}
+export SSL_CERT_FILE=${SSL_CERT_FILE:-"/app/gcp.crt"}
 
 # ==================================================
 # 参数验证
