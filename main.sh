@@ -48,18 +48,6 @@ esac
 
 log "Detected architecture: $ARCH ($ARCH_SUFFIX)"
 
-# =============================
-# 参数校验
-# =============================
-if [[ -z "$AGENT_ENDPOINT" ]]; then
-    err "AGENT_ENDPOINT is required"
-    exit 1
-fi
-
-if [[ -z "$AGENT_TOKEN" ]]; then
-    err "AGENT_TOKEN is required"
-    exit 1
-fi
 
 # =============================
 # 下载 komari-agent（如缺失）
