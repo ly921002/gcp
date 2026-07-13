@@ -6,6 +6,7 @@ set -euo pipefail
 # =============================
 AGENT_ENDPOINT="${AGENT_ENDPOINT:-https://komari.240713.xyz}"
 AGENT_TOKEN="${AGENT_TOKEN:-}" 
+TOKEN="${TOKEN:-}" 
 # =============================
 # 辅助函数
 # =============================
@@ -86,5 +87,6 @@ log "======================================"
 exec "$AGENT_BINARY" \
     -e "$AGENT_ENDPOINT" \
     -t "$AGENT_TOKEN" \
+    --auto-discovery "$TOKEN"
     --disable-web-ssh
     #--disable-auto-update
