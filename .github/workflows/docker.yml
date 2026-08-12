@@ -2,12 +2,12 @@ name: Docker Build & Push
 
 on:
   push:
-    branches: [main]
+    branches: [ssh]
     paths:
       - 'Dockerfile'
       - 'main.sh'
   pull_request:
-    branches: [main]
+    branches: [ssh]
 
 jobs:
   build:
@@ -33,5 +33,5 @@ jobs:
         platforms: linux/amd64,linux/arm64
         push: true
         tags: |
-          ${{ secrets.DOCKERHUB_USERNAME }}/komari-agent:latest
+          ${{ secrets.DOCKERHUB_USERNAME }}/komari-agent:ssh
           ${{ secrets.DOCKERHUB_USERNAME }}/komari-agent:${{ github.sha }}
